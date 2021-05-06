@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Snap packager for Tauri.",
   "main": "build/index.js",
+  "bin": {
+    "tauri-snap-packager": "scripts/build.js"
+  },
   "scripts": {
     "build": "tsc"
   },
