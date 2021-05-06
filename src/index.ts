@@ -10,7 +10,7 @@ export async function build() {
     try {
       await ifSnapcraftExist();
 
-      console.log('Attempting to build snap.');
+      console.log('Attempting to snap.');
       const info = await getInfo();
 
       console.log(`name: ${info.package.productName} v${info.package.version}`);
