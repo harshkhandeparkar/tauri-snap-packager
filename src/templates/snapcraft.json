@@ -19,8 +19,7 @@
       "prime": [],
       "build-packages": [],
       "stage-packages": [
-        "libc6",
-        "webkit2gtk"
+        "libc6"
       ]
     }
   }
