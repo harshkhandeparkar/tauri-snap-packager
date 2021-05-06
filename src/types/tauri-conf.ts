@@ -4,8 +4,10 @@ export interface ITauriConf {
     version: string;
   }
   tauri: {
-    icon: string[];
-    targets: string;
-    identifier: string;
+    bundle: {
+      icon: string[];
+      targets: string;
+      identifier: string;
+    }
   }
 }

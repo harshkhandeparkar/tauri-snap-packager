@@ -3,7 +3,9 @@
     "outDir": "build",
     "target": "ES5",
     "module": "commonjs",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "include": [
     "src/index.ts"

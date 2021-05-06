@@ -1,0 +1,27 @@
+{
+  "name": "placeholder-name",
+  "base": "core18",
+  "version": "placeholder-version",
+  "summary": "Tauri app.",
+  "description": "Awesome Tauri app.",
+
+  "grade": "devel",
+  "confinement": "classic",
+
+  "apps": {},
+
+  "parts": {
+    "dump-binary": {
+      "plugin": "dump",
+      "source": "src-tauri/target/release/",
+      "source-type": "local",
+      "stage": [],
+      "prime": [],
+      "build-packages": [],
+      "stage-packages": [
+        "libc6",
+        "webkit2gtk"
+      ]
+    }
+  }
+}
