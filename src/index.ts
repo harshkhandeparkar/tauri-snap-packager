@@ -3,6 +3,7 @@ import { isTauriProject } from './util/is-tauri-project';
 import { getInfo } from './util/get-info';
 import { initSnapcraft } from './build/init-snapcraft';
 import { buildSnap } from './build/build-snap';
+import { TAURI_BUILD_TARGET } from './constants/tauri-paths';
 
 export async function build() {
   if (isTauriProject()) {
@@ -18,7 +19,11 @@ export async function build() {
 
       console.log('Creating snapcraft.yaml');
       await initSnapcraft(info);
+
+      console.log('Building snap.');
       await buildSnap();
+
+      console.log(`Built snap in ${TAURI_BUILD_TARGET}.`);
     }
     catch(err) {
       throw err;
