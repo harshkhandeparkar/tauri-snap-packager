@@ -1,9 +1,9 @@
 import { existsSync } from 'fs';
-import { join } from 'path';
+import { SRC_TAURI, TAURI_CONF_JSON } from '../constants/tauri-paths';
 
 export function isTauriProject() {
-  if (existsSync('src-tauri')) {
-    if (existsSync(join('src-tauri', 'tauri.conf.json'))) {
+  if (existsSync(SRC_TAURI)) {
+    if (existsSync(TAURI_CONF_JSON)) {
       return true;
     }
     else throw 'tauri.conf.json not found.';
