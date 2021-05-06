@@ -5,7 +5,7 @@ export async function run(comamndName: string, args?: string[]): Promise<string>
     exec(`${comamndName}${args ? ' ' + args.join(' ') : ''}`, (err, stdout) => {
       if (err) reject(err);
       else {
-        return stdout;
+        resolve(stdout);
       }
     })
   })
