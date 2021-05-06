@@ -7,7 +7,8 @@
     "tauri-snap-packager": "scripts/build.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "npm-publish": "yarn build && yarn publish"
   },
   "repository": {
     "type": "git",
