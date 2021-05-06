@@ -17,7 +17,8 @@ export async function initSnapcraft(info: ITauriConf) {
       version: info.package.version,
       apps: {
         [info.package.productName]: {
-          command: info.package.productName
+          command: info.package.productName,
+          extensions: ['gnome-3-34']
         }
       }
     }

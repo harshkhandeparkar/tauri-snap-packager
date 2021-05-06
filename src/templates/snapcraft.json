@@ -6,7 +6,7 @@
   "description": "Awesome Tauri app.",
 
   "grade": "devel",
-  "confinement": "classic",
+  "confinement": "strict",
 
   "apps": {},
 
@@ -21,7 +21,6 @@
       "prime": [
         "lib"
       ],
-      "build-packages": [],
       "stage-packages": [
         "libc6"
       ]

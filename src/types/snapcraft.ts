@@ -1,5 +1,7 @@
 export interface ISnapAppCommand {
   command: string;
+  extensions?: string[];
+  plugs?: string[];
 }
 
 export interface ISnapPart {
