@@ -4,12 +4,12 @@ export interface ISnapAppCommand {
 
 export interface ISnapPart {
   plugin: string;
-  source: string;
-  'source-type': string;
-  stage: string[];
-  prime: string[];
-  'build-packages': string[];
-  'stage-packages': string[];
+  source?: string;
+  'source-type'?: string;
+  stage?: string[];
+  prime?: string[];
+  'build-packages'?: string[];
+  'stage-packages'?: string[];
 }
 
 export interface ISnapcraftYaml {

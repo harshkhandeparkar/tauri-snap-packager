@@ -15,8 +15,12 @@
       "plugin": "dump",
       "source": "src-tauri/target/release/",
       "source-type": "local",
-      "stage": [],
-      "prime": [],
+      "stage": [
+        "lib"
+      ],
+      "prime": [
+        "lib"
+      ],
       "build-packages": [],
       "stage-packages": [
         "libc6"
