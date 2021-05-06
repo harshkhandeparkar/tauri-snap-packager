@@ -2,6 +2,7 @@ import { ifSnapcraftExist } from './util/check-snapcraft';
 import { isTauriProject } from './util/is-tauri-project';
 import { getInfo } from './util/get-info';
 import { initSnapcraft } from './build/init-snapcraft';
+import { buildSnap } from './build/build-snap';
 
 export async function build() {
   if (isTauriProject()) {
@@ -16,7 +17,8 @@ export async function build() {
       console.log(`targets: ${info.tauri.bundle.targets}`);
 
       console.log('Creating snapcraft.yaml');
-      initSnapcraft(info);
+      await initSnapcraft(info);
+      await buildSnap();
     }
     catch(err) {
       throw err;

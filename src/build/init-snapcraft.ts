@@ -1,3 +1,4 @@
+import { existsSync, rmSync } from 'fs';
 import { mkdir, writeFile } from 'fs/promises';
 import { dump } from 'js-yaml';
 import { SNAPCRAFT_YAML, SNAP_DIR } from '../constants/snapcraft-paths';
@@ -6,6 +7,8 @@ import { ITauriConf } from '../types/tauri-conf';
 
 export async function initSnapcraft(info: ITauriConf) {
   try {
+    if (existsSync(SNAP_DIR)) rmSync(SNAP_DIR, {recursive: true});
+
     await mkdir(SNAP_DIR);
 
     const finalSnapcraftConfig = {
