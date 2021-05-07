@@ -11,7 +11,7 @@ export async function dumpFiles(info: ITauriConf) {
     await writeFile(
       join(
         TAURI_TARGET_RELEASE,
-        `${info.package.productName}.desktop`
+        `${info.package.productName}.desktop` // target/release/[productName].desktop
       ),
       getDesktopFile(
         info.package.productName,

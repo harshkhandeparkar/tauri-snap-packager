@@ -2,6 +2,9 @@ import { run } from '../util/async-run';
 import { TAURI_BUILD_TARGET } from '../constants/tauri-paths';
 import { existsSync } from 'fs';
 
+/**
+ * Runs the snapcraft command
+ */
 export async function buildSnap() {
   try {
     if (existsSync(TAURI_BUILD_TARGET)) {

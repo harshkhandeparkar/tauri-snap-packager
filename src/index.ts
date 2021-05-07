@@ -12,17 +12,18 @@ export async function build() {
       await ifSnapcraftExist();
 
       console.log('Attempting to snap.');
-      const info = await getInfo();
+      const info = await getInfo(); // Get the tauri.conf.json file
 
-      console.log(`name: ${info.package.productName} v${info.package.version}`);
+      console.log('');
+      console.log(`app: ${info.package.productName} v${info.package.version}`);
       console.log(`identifier: ${info.tauri.bundle.identifier}`);
-      console.log(`targets: ${info.tauri.bundle.targets}`);
+      console.log('');
 
       console.log('Creating snapcraft.yaml');
-      await initSnapcraft(info);
+      await initSnapcraft(info); // Create snap/ directory and snapcraft.yaml
 
       console.log('Transferring files.');
-      await dumpFiles(info);
+      await dumpFiles(info); // Icons and .desktop file
 
       console.log('Building snap.');
       await buildSnap();

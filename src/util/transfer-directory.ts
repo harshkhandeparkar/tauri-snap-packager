@@ -2,6 +2,11 @@ import { rm, copyFile, readdir, mkdir } from 'fs/promises';
 import { existsSync, statSync } from 'fs';
 import { join } from 'path';
 
+/**
+ * Copy an entire directory recursively.
+ * @param src
+ * @param dest
+ */
 export async function transferDir(src: string, dest: string): Promise<any> {
   try {
     if (existsSync(dest)) {
