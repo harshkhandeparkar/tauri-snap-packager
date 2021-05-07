@@ -16,10 +16,12 @@
       "source": "release",
       "source-type": "local",
       "stage": [
-        "lib"
+        "lib",
+        "icons"
       ],
       "prime": [
-        "lib"
+        "lib",
+        "icons"
       ],
       "stage-packages": [
         "libc6"

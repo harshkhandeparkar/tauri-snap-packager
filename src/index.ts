@@ -2,6 +2,7 @@ import { ifSnapcraftExist } from './util/check-snapcraft';
 import { isTauriProject } from './util/is-tauri-project';
 import { getInfo } from './util/get-info';
 import { initSnapcraft } from './build/init-snapcraft';
+import { dumpFiles } from './build/dump-files';
 import { buildSnap } from './build/build-snap';
 import { TAURI_BUILD_TARGET } from './constants/tauri-paths';
 
@@ -19,6 +20,9 @@ export async function build() {
 
       console.log('Creating snapcraft.yaml');
       await initSnapcraft(info);
+
+      console.log('Transferring files.');
+      await dumpFiles(info);
 
       console.log('Building snap.');
       await buildSnap();

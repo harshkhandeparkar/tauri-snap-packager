@@ -1,12 +1,9 @@
 import { existsSync } from 'fs';
 import { writeFile, rm, mkdir } from 'fs/promises';
-import { join } from 'path';
 import { dump } from 'js-yaml';
 import { SNAPCRAFT_YAML, SNAP_DIR } from '../constants/snapcraft-paths';
 import { BASIC_SNAPCRAFT_YAML } from '../constants/templates';
 import { ITauriConf } from '../types/tauri-conf';
-import { getDesktopFile } from '../templates/desktop';
-import { TAURI_TARGET_RELEASE } from '../constants/tauri-paths';
 
 export async function initSnapcraft(info: ITauriConf) {
   try {
@@ -35,7 +32,6 @@ export async function initSnapcraft(info: ITauriConf) {
     finalSnapcraftConfig.parts['dump-binary'].prime.push(info.package.productName);
     finalSnapcraftConfig.parts['dump-binary'].prime.push(`${info.package.productName}.desktop`);
 
-    await writeFile(join(TAURI_TARGET_RELEASE, `${info.package.productName}.desktop`), getDesktopFile(info.package.productName, info.package.productName, join('icons', '128x128.png'), 'Awesome Tauri App.'));
     await writeFile(SNAPCRAFT_YAML, dump(finalSnapcraftConfig));
   }
   catch(e) {
