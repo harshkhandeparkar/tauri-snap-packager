@@ -16,7 +16,6 @@ export async function dumpFiles(info: ITauriConf) {
       getDesktopFile(
         info.package.productName,
         info.package.productName,
-        join('icons', '128x128.png'),
         'Awesome Tauri App.'
       )
     )
