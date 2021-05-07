@@ -13,7 +13,7 @@
   "parts": {
     "dump-binary": {
       "plugin": "dump",
-      "source": "src-tauri/target/release/",
+      "source": "release",
       "source-type": "local",
       "stage": [
         "lib"

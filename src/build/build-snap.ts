@@ -5,7 +5,7 @@ import { existsSync } from 'fs';
 export async function buildSnap() {
   try {
     if (existsSync(TAURI_BUILD_TARGET)) {
-      await run('snapcraft', ['--debug'], TAURI_BUILD_TARGET);
+      await run('snapcraft', [], TAURI_BUILD_TARGET);
     }
     else throw 'Run tauri build first. See https://tauri.studio/en/docs/usage/development/publishing';
   }
