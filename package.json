@@ -1,6 +1,6 @@
 {
   "name": "tauri-snap-packager",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Snap packager for Tauri.",
   "main": "build/index.js",
   "bin": {
